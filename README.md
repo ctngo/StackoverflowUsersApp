@@ -1,6 +1,6 @@
 # Coding Challenge Android
 
-To further improve the app, I would want to add unit test and convert the activity to be an activity using a single fragment, so the fragment can be used elsewhere. I would also want to specify more layouts for different devices and improve the UI. I tried to make the design similar to how user info is shown on Stackoverflow questions. I used a RecyclerView to display the data (the first page of Stackoverflow users).
+Clicking on a user listing should open the page for that user's profile. I tried to make the design similar to how user info is shown on Stackoverflow questions. I used a RecyclerView to display the data (the first page of Stackoverflow users). I started writing the app using HttpUrlConnection and AsyncTask to access the Stackoverflow API. Then I refactored it to use Volley for caching functionality instead. To further improve the app, I would want to add unit tests and convert the activity to be an activity using a single fragment, so the fragment can be used elsewhere. I would also want to specify more layouts for different devices and improve the UI.
 
 ## Technical Requirements
 

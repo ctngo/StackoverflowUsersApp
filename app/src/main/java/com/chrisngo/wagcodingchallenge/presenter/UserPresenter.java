@@ -4,15 +4,11 @@ import android.content.Context;
 import android.util.Log;
 
 import com.chrisngo.wagcodingchallenge.domain.model.ResponseItems;
-import com.chrisngo.wagcodingchallenge.domain.restClient.RequestCompletedListener;
-import com.chrisngo.wagcodingchallenge.domain.restClient.StackExchangeUserRequestHelper;
-import com.chrisngo.wagcodingchallenge.util.Constants;
-import com.chrisngo.wagcodingchallenge.util.ParamStringBuilder;
+import com.chrisngo.wagcodingchallenge.domain.restclient.RequestCompletedListener;
+import com.chrisngo.wagcodingchallenge.domain.restclient.users.StackExchangeUserRequestHelper;
 import com.chrisngo.wagcodingchallenge.view.activity.UserView;
 import com.google.gson.Gson;
 
-import java.util.HashMap;
-import java.util.Map;
 
 public class UserPresenter {
     private Context context;
@@ -21,7 +17,6 @@ public class UserPresenter {
     private StackExchangeRequestCompletedListener requestCompletedListener =
             new StackExchangeRequestCompletedListener();
     private static final String TAG = UserPresenter.class.getSimpleName();
-    private static final String BASE_STACK_OVERFLOW_USERS_URL = Constants.BASE_STACK_OVERFLOW_USERS_URL;
 
 
     public UserPresenter(Context context, UserView userView) {
@@ -30,12 +25,12 @@ public class UserPresenter {
         this.requestHelper = new StackExchangeUserRequestHelper(context, requestCompletedListener);
     }
 
+    /**
+     * Gets list of first page of users on Stackoverflow
+     */
     public void fetchStackOverflowUsers() {
-        // add params
-        Map<String, String> params = new HashMap<>();
-        params.put("page", "1");
-        String formattedParams = ParamStringBuilder.buildParamString(params);
-        requestHelper.requestUsersListString(BASE_STACK_OVERFLOW_USERS_URL + formattedParams);
+
+        requestHelper.requestUsersListString();
     }
 
     class StackExchangeRequestCompletedListener implements RequestCompletedListener{

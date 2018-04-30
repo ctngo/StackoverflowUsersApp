@@ -1,4 +1,4 @@
-package com.chrisngo.wagcodingchallenge.domain.restClient;
+package com.chrisngo.wagcodingchallenge.domain.restclient;
 
 import android.content.Context;
 import android.util.Log;
@@ -20,23 +20,23 @@ import com.chrisngo.wagcodingchallenge.util.Constants;
 
 import java.io.UnsupportedEncodingException;
 
-public class StackExchangeUserRequestHelper {
+public class StackExchangeRequestHelperBase {
     private Context context;
     private RequestQueue requestQueue;
     private RequestCompletedListener requestCompletedListener;
-    private static final String TAG = StackExchangeUserRequestHelper.class.getSimpleName();
+    private static final String TAG = StackExchangeRequestHelperBase.class.getSimpleName();
     private static final String GET = Constants.GET;
 
-
-    public StackExchangeUserRequestHelper(Context context) {
-        this.context = context;
-    }
-    public StackExchangeUserRequestHelper(Context context, RequestCompletedListener requestCompletedListener) {
+    public StackExchangeRequestHelperBase(Context context, RequestCompletedListener requestCompletedListener) {
         this.context = context;
         this.requestCompletedListener = requestCompletedListener;
     }
 
-    public void requestUsersListString(final String url) {
+    /**
+     * Requests String response using specified URL
+     * @param url API request URL
+     */
+    public void requestStringGet(final String url) {
         StringRequest request = new StringRequest(url, new Response.Listener<String>() {
 
             @Override
@@ -87,5 +87,4 @@ public class StackExchangeUserRequestHelper {
         req.setRetryPolicy(new DefaultRetryPolicy());
         getRequestQueue().add(req);
     }
-
 }

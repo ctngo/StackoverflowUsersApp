@@ -50,8 +50,8 @@ public class UserRecyclerViewAdapter extends RecyclerView.Adapter<UserRecyclerVi
         holder.silverBadges.setText(String.format("%d", user.getBadgeCounts().getSilver()));
         holder.bronzeBadges.setText(String.format("%d", user.getBadgeCounts().getBronze()));
         final String imageUri = user.getProfileImage();
+        // Open user's stackoverflow profile on click
         holder.usersLayout.setOnClickListener(new View.OnClickListener() {
-            // Open user's stackoverflow profile on click
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(user.getLink()));
@@ -74,8 +74,12 @@ public class UserRecyclerViewAdapter extends RecyclerView.Adapter<UserRecyclerVi
     }
 
 
-    // Load image using Picasso to handle caching. Try loading from cache first.
-    // If cached load fails try downloading the image.
+    /**
+     * Load image using Picasso to handle caching. Try loading from cache first.
+     * If cached load fails try downloading the image.
+     * @param holder ViewHolder containing views to be displayed
+     * @param imageUri Uri of image to load in String form
+     */
     private void loadImage(final ViewHolder holder, final String imageUri) {
         if(imageUri!=null) {
             Picasso.get()
