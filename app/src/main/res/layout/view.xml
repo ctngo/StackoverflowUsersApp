@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/usersLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/user_fragment"/>
+    <ImageView
+        android:id="@+id/gravatar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:padding="4dp"
+        android:scaleType="fitStart" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="@id/gravatar"
+        app:layout_constraintTop_toTopOf="@id/gravatar"
+        app:layout_constraintEnd_toEndOf="@id/gravatar"
+        app:layout_constraintBottom_toBottomOf="@id/gravatar"
+        android:layout_alignParentStart="true"
+        android:indeterminate="true" />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="3dp"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/gravatar"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="username" />
+
+    <TextView
+
+        android:id="@+id/reputation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="3dp"
+        android:textColor="@color/colorGray"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="@id/username"
+        app:layout_constraintTop_toBottomOf="@id/username"
+        tools:text="reputation" />
+
+    <TextView
+        android:id="@+id/gold_badges"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/username"
+        android:drawablePadding="3dp"
+        android:drawableStart="@drawable/gold_badge"
+        android:padding="3dp"
+        android:textColor="@color/colorLightGray"
+        app:layout_constraintLeft_toRightOf="@id/reputation"
+        app:layout_constraintTop_toBottomOf="@id/username"
+        tools:text="gold" />
+
+    <TextView
+        android:id="@+id/silver_badges"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="3dp"
+        android:drawableStart="@drawable/silver_badge"
+        android:padding="3dp"
+        android:textColor="@color/colorLightGray"
+        app:layout_constraintStart_toEndOf="@+id/gold_badges"
+        app:layout_constraintTop_toBottomOf="@id/username"
+        tools:text="silver" />
+
+    <TextView
+        android:id="@+id/bronze_badges"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="3dp"
+        android:drawableStart="@drawable/bronze_badge"
+        android:padding="3dp"
+        android:textColor="@color/colorLightGray"
+        app:layout_constraintStart_toEndOf="@+id/silver_badges"
+        app:layout_constraintTop_toBottomOf="@id/username"
+        tools:text="bronze" />
+
+
+    <!--app:layout_constraintTop_toTopOf="@+id/image"/>-->
+
+</android.support.constraint.ConstraintLayout>

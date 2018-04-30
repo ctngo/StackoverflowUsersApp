@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">WagCodingChallenge</string>
+
+    <string name="error_network_timeout">Error: Network timeout error</string>
+</resources>
