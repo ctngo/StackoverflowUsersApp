@@ -74,8 +74,8 @@ public class UserRecyclerViewAdapter extends RecyclerView.Adapter<UserRecyclerVi
     }
 
 
-    // Load image using Picasso to handle caching. If device is offline, load from cache.
-    // If cached load fails try one more time.
+    // Load image using Picasso to handle caching. Try loading from cache first.
+    // If cached load fails try downloading the image.
     private void loadImage(final ViewHolder holder, final String imageUri) {
         if(imageUri!=null) {
             Picasso.get()
