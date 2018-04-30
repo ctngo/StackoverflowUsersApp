@@ -24,8 +24,8 @@ public class MainActivity extends AppCompatActivity implements UserView {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //TODO: Make into fragments
-        recyclerView = (RecyclerView) findViewById(R.id.mRecyclerView);
+        //TODO: Convert to fragments
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         layoutManager = new LinearLayoutManager(MainActivity.this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());

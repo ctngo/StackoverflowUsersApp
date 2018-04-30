@@ -5,10 +5,7 @@
     android:id="@+id/usersLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-    <fragment
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/user_fragment"/>
+
     <ImageView
         android:id="@+id/gravatar"
         android:layout_width="50dp"
@@ -39,7 +36,6 @@
         tools:text="username" />
 
     <TextView
-
         android:id="@+id/reputation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -88,6 +84,6 @@
         tools:text="bronze" />
 
 
-    <!--app:layout_constraintTop_toTopOf="@+id/image"/>-->
+    <!--TODO: create different layouts for different size devices-->
 
 </android.support.constraint.ConstraintLayout>

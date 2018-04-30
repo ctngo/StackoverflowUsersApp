@@ -41,8 +41,8 @@ public class UserRecyclerViewAdapter extends RecyclerView.Adapter<UserRecyclerVi
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
-        Log.d(TAG, "Setting views");
         final User user = userData.get(position);
+        Log.d(TAG, "Setting user_recycler_view for " + user.getDisplayName());
         NumberFormat nf = NumberFormat.getInstance();
         holder.username.setText(user.getDisplayName());
         holder.reputation.setText(nf.format(user.getReputation()));
@@ -69,7 +69,7 @@ public class UserRecyclerViewAdapter extends RecyclerView.Adapter<UserRecyclerVi
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.view, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.user_recycler_view, parent, false);
         return new ViewHolder(view);
     }
 
